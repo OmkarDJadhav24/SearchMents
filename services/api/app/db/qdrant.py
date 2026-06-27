@@ -1,3 +1,32 @@
+"""
+
+Application Starts
+        │
+        ▼
+Load settings
+        │
+        ▼
+Create (or reuse) Async Qdrant client
+        │
+        ▼
+Check existing collections
+        │
+        ├───────────────► Exists?
+        │                     │
+        │                     ▼
+        │                Skip creation
+        │
+        ▼
+Create collection (if missing)
+        │
+        ▼
+Create/verify payload indexes
+        │
+        ▼
+Application ready to store and search embeddings
+
+"""
+
 from functools import lru_cache
 
 from qdrant_client import AsyncQdrantClient
